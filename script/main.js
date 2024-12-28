@@ -27,7 +27,7 @@ document.getElementById('verificationName').addEventListener('submit', function(
     const errorMessage = document.getElementById('error-message');
 
     // Validasi nama
-    const validNames = ['Fina', 'Fina Sulistia', 'Fina Sulistia Ningrum', 'FINA SULISTIA NINGRUM'];
+    const validNames = ['Fina Sulistia Ningrum'];
 
     // Jika nama tidak valid, tampilkan pesan error
     if (!validNames.includes(nameInput)) {
@@ -49,10 +49,23 @@ document.getElementById('verification').addEventListener('submit', function(e) {
     const isPartner = document.getElementById('isPartner').value;
 
     // Jika jawabannya bukan 'yes', tampilkan pesan peringatan
-    if (isPartner !== 'yes') {
+    if (isPartner == 'no') {
         Swal.fire({
-            title: 'Bukan Pacar Dito :(',
+            title: 'Yah cuma temen :(',
             text: 'Maaf Gaboleh Lanjut.',
+            icon: 'warning',
+        }).then(() => {
+            // Reset form dan kembali ke step 1
+            document.getElementById('verification').reset();
+            document.getElementById('step1').style.display = 'block';
+            document.getElementById('step2').style.display = 'none';
+        });
+        return;
+    }
+    else if (isPartner == 'noh') {
+        Swal.fire({
+            title: 'Najis gw masi normal >:(',
+            text: 'Cabut lu.',
             icon: 'warning',
         }).then(() => {
             // Reset form dan kembali ke step 1
@@ -65,7 +78,7 @@ document.getElementById('verification').addEventListener('submit', function(e) {
 
     // Jika valid, tampilkan SweetAlert sukses dan jalankan animasi
     Swal.fire({
-        title: 'Ohh inikah Pacarku ??',
+        title: 'Ohh inikah cewek gw ?',
         text: 'Silahkan Lanjut!',
         icon: 'success',
     }).then(() => {
@@ -279,8 +292,8 @@ const animationTimeline = () => {
             rotationZ: -45,
         },
         "-=2"
-    ).
-    from(
+    )
+    .from(
         ".profile-picture4",
         1.5, {
             scale: 3.5,

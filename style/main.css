@@ -6,7 +6,7 @@ body {
   font-family: 'Poppins', sans-serif;
   /* margin: 5;
   padding: 2%; */
-  background-color: #FFCBCB;
+  background-color: #ffcbf4; /* Warna cadangan jika gambar tidak dimuat */
 }
 
 .song {
