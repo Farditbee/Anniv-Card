@@ -258,12 +258,39 @@ const animationTimeline = () => {
         },
         "-=2"
     )
-    .from(".hat", 0.5, {
-        x: -100,
-        y: 350,
-        rotation: -180,
-        opacity: 0,
-    })
+    .from(
+        ".profile-picture2",
+        1, {
+            scale: 3.5,
+            opacity: 0,
+            x: 25,
+            y: -25,
+            rotationZ: -45,
+        },
+        "-=2"
+    )
+    .from(
+        ".profile-picture3",
+        1.5, {
+            scale: 3.5,
+            opacity: 0,
+            x: 25,
+            y: -25,
+            rotationZ: -45,
+        },
+        "-=2"
+    ).
+    from(
+        ".profile-picture4",
+        1.5, {
+            scale: 3.5,
+            opacity: 0,
+            x: 25,
+            y: -25,
+            rotationZ: -45,
+        },
+        "-=2"
+    )
     .staggerFrom(
         ".wish-hbd span",
         0.7, {
